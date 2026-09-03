@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.MIKO OS.system'
+    namespace 'com.miko.os.system'
     compileSdk 34
 
     defaultConfig {

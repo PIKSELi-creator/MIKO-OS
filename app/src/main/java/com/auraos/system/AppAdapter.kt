@@ -1,4 +1,4 @@
-package com.auraos.system
+package com.MIKO-OS.system
 
 import android.content.Intent
 import android.view.LayoutInflater

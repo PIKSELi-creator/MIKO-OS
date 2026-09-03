@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.auraos.system'
+    namespace 'com.MIKO OS.system'
     compileSdk 34
 
     defaultConfig {

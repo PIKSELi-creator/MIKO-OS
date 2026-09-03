@@ -1,4 +1,4 @@
-package com.auraos.system
+package com.MIKO-OS.system
 
 import android.graphics.drawable.Drawable
 

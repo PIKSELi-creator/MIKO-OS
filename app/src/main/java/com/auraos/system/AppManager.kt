@@ -1,4 +1,4 @@
-package com.MIKO-OS.system
+package com.miko.os.system
 
 import android.content.Context
 import android.content.Intent

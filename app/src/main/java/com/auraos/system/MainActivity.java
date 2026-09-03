@@ -1,4 +1,4 @@
-package com.MIKO-OS.system;
+package com.miko.os.system;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;

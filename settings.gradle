@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Aura-OS"
+rootProject.name = "MIKO-OS"
 include ':app'
 

@@ -2,35 +2,38 @@ name: Build MIKO OS APK
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: gradle
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
 
-    - name: Make gradlew executable
-      run: chmod +x ./gradlew
+      - name: Install Gradle 8.2
+        run: |
+          wget https://services.gradle.org/distributions/gradle-8.2-bin.zip
+          unzip -q gradle-8.2-bin.zip
+          echo "$PWD/gradle-8.2/bin" >> $GITHUB_PATH
 
-    - name: Clean Gradle cache
-      run: ./gradlew clean
+      - name: Clean
+        run: gradle clean
 
-    - name: Build with Gradle
-      run: ./gradlew assembleDebug
+      - name: Build MIKO OS APK
+        run: gradle assembleDebug
 
-    - name: Upload APK Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: MIKO-OS-debug-apk
-        path: app/build/outputs/apk/debug/app-debug.apk
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MIKO-OS-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk

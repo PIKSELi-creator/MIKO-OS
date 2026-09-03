@@ -1,4 +1,4 @@
-package com.auraos.system; // Замени на имя твоего пакета
+package com.MIKO-OS.system;
 
 import android.graphics.drawable.Drawable
 
